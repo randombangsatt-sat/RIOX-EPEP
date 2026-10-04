@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Riox Epep - Top Up Diamond Free Fire Murah & Cepat</title>
+  <!-- CSS Internal & Eksternal -->
+  <link rel="stylesheet" href="style.css">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAVBAR / HEADER -->
+  <header class="navbar">
+    <div class="logo">
+      <i class="fa-solid fa-fire"></i> RIOX EPEP
+    </div>
+    <div class="status-badge">
+      <span class="dot"></span> System Online 24/7
+    </div>
+  </header>
+
+  <!-- CONTAINER UTAMA -->
+  <main class="container">
+
+    <!-- BANNER PEMBERITAHUAN -->
+    <div class="banner-box">
+      <i class="fa-solid fa-bullhorn"></i>
+      <span>Top Up Diamond Free Fire Murah, Cepat, dan Aman! Gunakan E-Wallet favoritmu!</span>
+    </div>
+
+    <!-- LANGKAH 1: PLAYER ID -->
+    <section class="card">
+      <div class="card-header">
+        <span class="step-num">1</span>
+        <h3>Masukkan Player ID</h3>
+      </div>
+      <div class="card-body">
+        <div class="input-group">
+          <input type="number" id="userId" placeholder="Contoh: 123456789" />
+          <button id="btnCheckId" type="button"><i class="fa-solid fa-magnifying-glass"></i> Cek ID</button>
+        </div>
+        <p class="hint-text"><i class="fa-solid fa-circle-info"></i> Player ID dapat dilihat pada profil game Free Fire Anda.</p>
+        <div id="idResult"></div>
+      </div>
+    </section>
+
+    <!-- LANGKAH 2: NOMINAL TOP UP -->
+    <section class="card">
+      <div class="card-header">
+        <span class="step-num">2</span>
+        <h3>Pilih Nominal Top Up</h3>
+      </div>
+      <div class="card-body">
+        <div id="itemsGrid" class="grid-container"></div>
+      </div>
+    </section>
+
+    <!-- LANGKAH 3: METODE PEMBAYARAN -->
+    <section class="card">
+      <div class="card-header">
+        <span class="step-num">3</span>
+        <h3>Pilih Metode Pembayaran</h3>
+      </div>
+      <div class="card-body">
+        <div id="paymentGrid" class="grid-container"></div>
+      </div>
+    </section>
+
+    <!-- LANGKAH 4: NOMOR WHATSAPP -->
+    <section class="card">
+      <div class="card-header">
+        <span class="step-num">4</span>
+        <h3>Nomor WhatsApp (Untuk Bukti Transaksi)</h3>
+      </div>
+      <div class="card-body">
+        <div class="input-group">
+          <input type="tel" id="userPhone" placeholder="08xxxxxxxxxx" />
+        </div>
+        <p class="hint-text"><i class="fa-solid fa-shield-halved"></i> Nomor ini digunakan untuk mengirimkan konfirmasi transaksi.</p>
+      </div>
+    </section>
+
+    <!-- RINGKASAN PESANAN -->
+    <section class="summary-card">
+      <h3><i class="fa-solid fa-receipt"></i> Ringkasan Pesanan</h3>
+      <div class="summary-details">
+        <div class="summary-item"><span>Player ID:</span> <strong id="summaryId">-</strong></div>
+        <div class="summary-item"><span>Nickname:</span> <strong id="summaryNick">-</strong></div>
+        <div class="summary-item"><span>Item:</span> <strong id="summaryItem">-</strong></div>
+        <div class="summary-item"><span>Pembayaran:</span> <strong id="summaryPayment">-</strong></div>
+        <div class="summary-item total"><span>Total Bayar:</span> <strong id="summaryTotal">Rp 0</strong></div>
+      </div>
+      <button id="btnOrder" class="btn-primary" disabled><i class="fa-solid fa-cart-shopping"></i> Beli Sekarang</button>
+    </section>
+
+  </main>
+
+  <!-- MODAL INVOICE PEMBAYARAN -->
+  <div id="invoiceModal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Invoice Pembayaran</h2>
+      <p class="timer-info">Selesaikan pembayaran dalam: <span id="countdownTimer">15:00</span></p>
+
+      <div class="invoice-info">
+        <p><strong>Kode Transaksi:</strong> <span id="invCode">-</span></p>
+        <p><strong>Player ID:</strong> <span id="invPlayerId">-</span></p>
+        <p><strong>Nickname:</strong> <span id="invNick">-</span></p>
+        <p><strong>Item:</strong> <span id="invItem">-</span></p>
+        <p><strong>Metode Pembayaran:</strong> <span id="invMethod">-</span></p>
+        <p><strong>Total Transfer:</strong> <span id="invTotal" class="highlight-price">Rp 0</span></p>
+      </div>
+
+      <div id="payInstruction" class="pay-instruction"></div>
+
+      <div class="modal-actions">
+        <button id="btnSimulatePay" class="btn-success"><i class="fa-solid fa-circle-check"></i> Bayar Sekarang (Simulasi)</button>
+        <button id="btnWaConfirm" class="btn-wa"><i class="fa-brands fa-whatsapp"></i> Konfirmasi via WA</button>
+        <button id="btnCloseModal" class="btn-secondary">Tutup</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPT JAVASCRIPT -->
+  <script src="script.js"></script>
+</body>
+</html>

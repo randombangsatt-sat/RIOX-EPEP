@@ -1,0 +1,343 @@
+/* RESET & GLOBAL STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #0f172a;
+  color: #f8fafc;
+  padding-bottom: 40px;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1e293b;
+  padding: 15px 20px;
+  border-bottom: 2px solid #334155;
+}
+
+.logo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #f97316;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-badge {
+  background-color: #064e3b;
+  color: #34d399;
+  font-size: 0.75rem;
+  padding: 5px 12px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background-color: #10b981;
+  border-radius: 50%;
+}
+
+/* LAYOUT CONTAINER */
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 0 15px;
+}
+
+.banner-box {
+  background-color: #1e293b;
+  border-left: 4px solid #f97316;
+  padding: 12px 15px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #cbd5e1;
+}
+
+/* CARD STYLES */
+.card {
+  background-color: #1e293b;
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 18px;
+  border: 1px solid #334155;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.step-num {
+  background-color: #ea580c;
+  color: #fff;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.card-header h3 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* INPUT & BUTTON */
+.input-group {
+  display: flex;
+  gap: 10px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="tel"] {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid #475569;
+  background-color: #0f172a;
+  color: #fff;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+input:focus {
+  border-color: #f97316;
+}
+
+#btnCheckId {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 0 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.hint-text {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  margin-top: 8px;
+}
+
+#idResult {
+  margin-top: 10px;
+  font-size: 0.85rem;
+}
+
+.id-result-msg.success { color: #4ade80; }
+.id-result-msg.error { color: #f87171; }
+
+/* GRID NOMINAL & PEMBAYARAN */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.item-card, .pay-card {
+  background-color: #0f172a;
+  border: 2px solid #334155;
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.item-card:hover, .pay-card:hover {
+  border-color: #f97316;
+}
+
+.item-card.selected, .pay-card.selected {
+  border-color: #f97316;
+  background-color: #2a1b12;
+}
+
+.item-icon, .pay-icon {
+  font-size: 1.4rem;
+  color: #f97316;
+  margin-bottom: 6px;
+}
+
+.item-name, .pay-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.item-price {
+  font-size: 0.8rem;
+  color: #38bdf8;
+  margin-top: 4px;
+}
+
+/* RINGKASAN PESANAN */
+.summary-card {
+  background-color: #1e293b;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #f97316;
+}
+
+.summary-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 15px;
+  color: #f97316;
+}
+
+.summary-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+  font-size: 0.85rem;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dashed #334155;
+  padding-bottom: 6px;
+}
+
+.summary-item.total {
+  border-bottom: none;
+  font-size: 1rem;
+  color: #38bdf8;
+}
+
+.btn-primary {
+  width: 100%;
+  background-color: #ea580c;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-primary:disabled {
+  background-color: #475569;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* MODAL INVOICE */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  z-index: 999;
+}
+
+.modal.hidden {
+  display: none !important;
+}
+
+.modal-content {
+  background-color: #1e293b;
+  width: 100%;
+  max-width: 450px;
+  border-radius: 12px;
+  padding: 22px;
+  border: 1px solid #475569;
+}
+
+.modal-content h2 {
+  font-size: 1.2rem;
+  color: #f97316;
+  text-align: center;
+}
+
+.timer-info {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  margin-bottom: 15px;
+}
+
+#countdownTimer {
+  color: #ef4444;
+  font-weight: bold;
+}
+
+.invoice-info {
+  background-color: #0f172a;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.highlight-price {
+  color: #38bdf8;
+  font-weight: bold;
+}
+
+.pay-instruction {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.qris-box img {
+  border-radius: 8px;
+  border: 4px solid #fff;
+  margin-top: 6px;
+}
+
+.va-code-box {
+  background-color: #0f172a;
+  padding: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #f97316;
+  border: 1px dashed #f97316;
+  border-radius: 6px;
+  margin-top: 5px;
+}
+
+.modal-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.btn-success { background-color: #16a34a; color: white; border: none; padding: 10px; border-radius: 6px; font-weight: bold; cursor: pointer; }
+.btn-wa { background-color: #25d366; color: white; border: none; padding: 10px; border-radius: 6px; font-weight: bold; cursor: pointer; }
+.btn-secondary { background-color: #475569; color: white; border: none; padding: 10px; border-radius: 6px; cursor: pointer; }
